@@ -16,10 +16,10 @@ public class Menjacnica implements interfejsmenjacnica.Menjacnica {
 		noviKurs.setProdajniKurs(prodajni);
 		noviKurs.setSrednjiKurs(srednji);
 	
-		if (valuta== null) {
-			System.out.println("Valuta ne sme biti null");
-			return;
-		}
+
+		if (valuta== null)
+			throw new RuntimeException("Valuta ne sme biti null");
+
 		
 		for(int i=0; i<valute.size();i++) {
 			
@@ -37,10 +37,10 @@ public class Menjacnica implements interfejsmenjacnica.Menjacnica {
 	@Override
 	public void brisanjeKursa(String valuta, GregorianCalendar datum) {
 		
-		if (valuta== null || datum==null) {
-			System.out.println("Valuta ni datum ne sme biti null");
-			return;
-		}
+
+		if (valuta== null || datum==null)
+			throw new RuntimeException("Valuta ni datum ne sme biti null");
+
 		for (int i= 0; i < valute.size(); i++) {
 			if (valute.get(i).getNaziv().equals(valuta))
 				for (int j = 0; j < valute.get(i).kurs.size(); j++)
@@ -54,10 +54,10 @@ public class Menjacnica implements interfejsmenjacnica.Menjacnica {
 	@Override
 	public Kurs vratiKurs(String valuta, GregorianCalendar datum) {
 
-		if (valuta== null || datum==null) {
-			System.out.println("Valuta ni datum ne sme biti null");
-			return null;
-		}
+
+		if (valuta== null || datum==null)
+			throw new RuntimeException("Valuta ni datum ne sme biti null");
+
 		
 		for (int i = 0; i < valute.size(); i++) {
 			if (valute.get(i).getNaziv().equals(valuta))
