@@ -8,23 +8,23 @@ public class Valuta {
 	private String naziv;
 	private String skraceniNaziv;
 	LinkedList<Kurs> kurs= new LinkedList<Kurs>();
+
 	public String getNaziv() {
 		return naziv;
 	}
+	
 	public void setNaziv(String naziv) {
+		if(naziv== null || naziv=="")
+			throw new RuntimeException("Naziv ne sme biti null ili prazan String");
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv== null || skraceniNaziv=="")
+			throw new RuntimeException("Naziv ne sme biti null ili prazan String");
 		this.skraceniNaziv = skraceniNaziv;
-	}
-	public LinkedList<Kurs> getKurs() {
-		return kurs;
-	}
-	public void setKurs(LinkedList<Kurs> kurs) {
-		this.kurs = kurs;
 	}
 	@Override
 	public int hashCode() {
