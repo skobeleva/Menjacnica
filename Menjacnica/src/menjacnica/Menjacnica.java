@@ -26,10 +26,12 @@ public class Menjacnica implements interfejsmenjacnica.Menjacnica {
 			if (valute.get(i).kurs.contains(noviKurs))
 				throw new RuntimeException("Uneti kurs vec postoji u listi.");
 			
-			if(valute.get(i).getNaziv().equals(valuta)) 
+			if(valute.get(i).getNaziv().equals(valuta)) {
 				valute.get(i).kurs.add(noviKurs);
-			
 				return;
+				}
+			
+				
 		}
 		
 	}
@@ -44,9 +46,12 @@ public class Menjacnica implements interfejsmenjacnica.Menjacnica {
 		for (int i= 0; i < valute.size(); i++) {
 			if (valute.get(i).getNaziv().equals(valuta))
 				for (int j = 0; j < valute.get(i).kurs.size(); j++)
-					if (valute.get(i).kurs.get(j).getDatum().compareTo(datum) == 0)
+					if (valute.get(i).kurs.get(j).getDatum().compareTo(datum) == 0) {
 						valute.get(i).kurs.remove(j);
-			return;}
+						return;
+					}
+			
+			}
 		System.out.println("Dati kurs ne postoji");
 
 	}
